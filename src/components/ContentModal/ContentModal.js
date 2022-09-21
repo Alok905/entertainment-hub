@@ -113,15 +113,17 @@ export default function TransitionsModal({ children, media_type, id }) {
                   <span className="contentmodal_description">
                     {content.overview}
                   </span>
-                  <div className="carousel">
-                    <Carousel media_type={media_type} id={id} />
-                  </div>
+                  <Carousel
+                    className="carousel"
+                    media_type={media_type}
+                    id={id}
+                  />
                   <Button
                     variant="contained"
                     startIcon={<YouTubeIcon />}
                     color="error"
                     target="_blank"
-                    sx={{ width: "100%", padding: "13px 0", marginTop: 10 }}
+                    sx={{ width: "100%", padding: "13px 0", marginTop: 3 }}
                     href={`https://www.youtube.com/watch?v=${video}`}
                   >
                     Watch the Trailer

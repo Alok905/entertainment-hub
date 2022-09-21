@@ -14,17 +14,26 @@ const Carousel = ({ media_type, id }) => {
     );
 
     setCredits(data.cast);
-    // console.log(data.cast);
+    console.log(data.cast);
   };
   const responsive = {
     0: {
+      items: 1,
+    },
+    350: {
       items: 3,
     },
-    512: {
-      items: 5,
+    550: {
+      items: 4,
     },
-    1024: {
-      items: 7,
+    934: {
+      items: 3,
+    },
+    1200: {
+      items: 4,
+    },
+    2100: {
+      items: 5,
     },
   };
   useEffect(() => {
@@ -32,11 +41,15 @@ const Carousel = ({ media_type, id }) => {
   }, []);
 
   const items = credits.map((c) => (
-    <img
-      src={c.profile_path ? `${img_300}/${c.profile_path}` : unavailable}
-      alt={c?.name}
-      onDragStart={handleDragStart}
-    />
+    <div style={{ textAlign: "center" }}>
+      <img
+        src={c.profile_path ? `${img_300}/${c.profile_path}` : unavailable}
+        alt={c?.name}
+        onDragStart={handleDragStart}
+        style={{ height: "25vh" }}
+      />
+      <b style={{ display: "block" }}>{c?.name}</b>
+    </div>
   ));
   // console.log(items);
   return (
@@ -46,6 +59,8 @@ const Carousel = ({ media_type, id }) => {
       autoPlay
       infinite
       responsive={responsive}
+      disableButtonsControls
+      disableDotsControls
     />
   );
 };
