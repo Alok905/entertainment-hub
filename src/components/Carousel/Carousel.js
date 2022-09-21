@@ -21,19 +21,22 @@ const Carousel = ({ media_type, id }) => {
       items: 1,
     },
     350: {
-      items: 3,
-    },
-    550: {
       items: 4,
+    },
+    650: {
+      items: 6,
     },
     934: {
-      items: 3,
-    },
-    1200: {
       items: 4,
     },
-    2100: {
+    1200: {
       items: 5,
+    },
+    1200: {
+      items: 6,
+    },
+    2100: {
+      items: 8,
     },
   };
   useEffect(() => {
