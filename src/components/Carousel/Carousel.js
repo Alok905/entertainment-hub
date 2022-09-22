@@ -17,14 +17,15 @@ const Carousel = ({ media_type, id }) => {
     console.log(data.cast);
   };
   const responsive = {
+    //1 4 6 4 6 6 5
     0: {
       items: 1,
     },
     350: {
       items: 3,
     },
-    550: {
-      items: 4,
+    650: {
+      items: 5,
     },
     934: {
       items: 3,
@@ -32,8 +33,11 @@ const Carousel = ({ media_type, id }) => {
     1200: {
       items: 4,
     },
-    2100: {
+    1200: {
       items: 5,
+    },
+    2100: {
+      items: 7,
     },
   };
   useEffect(() => {
@@ -46,7 +50,7 @@ const Carousel = ({ media_type, id }) => {
         src={c.profile_path ? `${img_300}/${c.profile_path}` : unavailable}
         alt={c?.name}
         onDragStart={handleDragStart}
-        style={{ height: "25vh" }}
+        style={{ height: "18vh" }}
       />
       <b style={{ display: "block" }}>{c?.name}</b>
     </div>
